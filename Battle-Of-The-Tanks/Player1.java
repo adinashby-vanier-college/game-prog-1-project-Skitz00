@@ -14,5 +14,37 @@ public class Player1 extends Actor
      */
     public void act()
     {
+        moveAndTurn();
+        shoot();
+    }
+
+    /**
+     * 
+     */
+    public void moveAndTurn()
+    {
+        if (Greenfoot.isKeyDown("w")) {
+            this.move(4);
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            this.move(-4);
+        }
+        if (Greenfoot.isKeyDown("a")) {
+            this.turn(-2);
+        }
+        if (Greenfoot.isKeyDown("d")) {
+            this.turn(2);
+        }
+    }
+
+    /**
+     * 
+     */
+    public void shoot()
+    {
+        if (Greenfoot.isKeyDown("space")) {
+            World world = getWorld();
+            world.addObject( new  Bullet(), getX(), getY());
+        }
     }
 }
