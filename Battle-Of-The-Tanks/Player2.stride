@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Player2" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="private" type="int" type-java="int" name="gunReloadTime" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="reloadDelayCount" enable="true"/>
+        <variable access="private" type="int" type-java="int" name="shotsFired" enable="true"/>
+        <variable access="private" type="Vector" type-java="Vector" name="movement" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <assign dest="gunReloadTime" dest-java="gunReloadTime" src="20" src-java="20" enable="true"/>
+                <assign dest="reloadDelayCount" dest-java="reloadDelayCount" src="0" src-java="0" enable="true"/>
+                <assign dest="shotsFired" dest-java="shotsFired" src="0" src-java="0" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="checkKeys()" expression-java="checkKeys()" enable="true"/>
+                <call expression="shoot()" expression-java="shoot()" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="checkKeys" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="Greenfoot.isKeyDown(&quot;i&quot;)" condition-java="Greenfoot.isKeyDown(&quot;i&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="this.move(-4)" expression-java="this.move(-4)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;k&quot;)" condition-java="Greenfoot.isKeyDown(&quot;k&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="this.move(4)" expression-java="this.move(4)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;j&quot;)" condition-java="Greenfoot.isKeyDown(&quot;j&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="this.turn(-2)" expression-java="this.turn(-2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;l&quot;)" condition-java="Greenfoot.isKeyDown(&quot;l&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="this.turn(2)" expression-java="this.turn(2)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;enter&quot;)" condition-java="Greenfoot.isKeyDown(&quot;enter&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="shoot()" expression-java="shoot()" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="int" type-java="int" name="getShotsFired" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <return value="shotsFired" value-java="shotsFired" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="setGunReloadTime" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <params type="int" type-java="int" name="reloadTime"/>
+            </params>
+            <throws/>
+            <body>
+                <assign dest="gunReloadTime" dest-java="gunReloadTime" src="reloadTime" src-java="reloadTime" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="void" type-java="void" name="shoot" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <if condition="reloadDelayCount&gt;=gunReloadTime" condition-java="reloadDelayCount &gt;= gunReloadTime" enable="true">
+                    <ifStatements>
+                        <variable type="Bullet" type-java="Bullet" name="bullet" value="new Bullet(getMovement().copy(),getRotation())" value-java=" new Bullet(getMovement().copy(), getRotation())" enable="true"/>
+                        <call expression="getWorld().addObject(bullet,getX(),getY())" expression-java="getWorld().addObject(bullet, getX(), getY())" enable="true"/>
+                        <call expression="bullet.move()" expression-java="bullet.move()" enable="true"/>
+                        <assign dest="shotsFired" dest-java="shotsFired" src="shotsFired+1" src-java="shotsFired + 1" enable="true"/>
+                        <assign dest="reloadDelayCount" dest-java="reloadDelayCount" src="0" src-java="0" enable="true"/>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+        <method access="public" type="Vector" type-java="Vector" name="getMovement" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <return value="movement" value-java="movement" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

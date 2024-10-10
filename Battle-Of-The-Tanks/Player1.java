@@ -44,7 +44,7 @@ public class Player1 extends Actor
     {
         if (Greenfoot.isKeyDown("space")) {
             World world = getWorld();
-            world.addObject( new  Bullet(), getX(), getY());
+            world.addObject( new Bullet(), getX(), getY());
         }
     }
 }
