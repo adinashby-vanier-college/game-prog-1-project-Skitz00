@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -6,16 +5,20 @@ import greenfoot.*;
 /**
  * 
  */
-public class Player1 extends Actor
+public class Player1 extends PCs
 {
-
+    public static int Cooldown_Gun =-10;
+    public static int Player1Hearts =3;
     /**
      * Act - do whatever the Player1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        moveAndTurn();
-        shoot();
+        if(Player1Hearts>0)
+        {
+            moveAndTurn();
+            shoot();
+        }
     }
 
     /**
@@ -24,27 +27,31 @@ public class Player1 extends Actor
     public void moveAndTurn()
     {
         if (Greenfoot.isKeyDown("w")) {
-            this.move(4);
+            move(4);
         }
         if (Greenfoot.isKeyDown("s")) {
-            this.move(-4);
+            move(-4);
         }
         if (Greenfoot.isKeyDown("a")) {
-            this.turn(-2);
+            turn(-2);
         }
         if (Greenfoot.isKeyDown("d")) {
-            this.turn(2);
+            turn(2);
         }
     }
-
-    /**
-     * 
-     */
     public void shoot()
     {
-        if (Greenfoot.isKeyDown("space")) {
-            World world = getWorld();
-            world.addObject( new Bullet(), getX(), getY());
+        if(Greenfoot.isKeyDown("space") && Cooldown_Gun <= 0)
+        {
+            Bullet bullet = new Bullet();
+            bullet.setRotation(getRotation());
+            this.getWorld().addObject(bullet,this.getX(), this.getY());
+            //Greenfoot.playSound("")
+            Cooldown_Gun = 20;
+        }
+        else if(!Greenfoot.isKeyDown("space"))
+        {
+            Cooldown_Gun--;
         }
     }
 }

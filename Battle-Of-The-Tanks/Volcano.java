@@ -6,11 +6,11 @@ import greenfoot.*;
 /**
  * 
  */
-public class Obstacle extends Actor
+public class Volcano extends NPCs
 {
 
     /**
-     * Act - do whatever the Obstacle wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Volcano wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {

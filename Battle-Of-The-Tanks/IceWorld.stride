@@ -12,7 +12,7 @@
             <javadoc xml:space="preserve">Constructor for objects of class IceWorld.</javadoc>
             <params/>
             <throws/>
-            <delegate target="super" params="1300,900,1" params-java="1300, 900, 1"/>
+            <delegate target="super" params="1200,800,1" params-java="1200, 800, 1"/>
             <body>
                 <call expression="prepare()" expression-java="prepare()" enable="true"/>
             </body>
@@ -25,24 +25,28 @@ That is: create the initial objects and add them to the world.</javadoc>
             <params/>
             <throws/>
             <body>
-                <variable type="Snowman" type-java="Snowman" name="snowman" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
-                <call expression="addObject(snowman,881,232)" expression-java="addObject(snowman, 881, 232)" enable="true"/>
-                <variable type="Snowman" type-java="Snowman" name="snowman2" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
-                <call expression="addObject(snowman2,830,714)" expression-java="addObject(snowman2, 830, 714)" enable="true"/>
-                <variable type="Snowman" type-java="Snowman" name="snowman3" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
-                <call expression="addObject(snowman3,507,413)" expression-java="addObject(snowman3, 507, 413)" enable="true"/>
-                <variable type="Snowman" type-java="Snowman" name="snowman4" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
-                <call expression="addObject(snowman4,566,179)" expression-java="addObject(snowman4, 566, 179)" enable="true"/>
-                <call expression="snowman3.setLocation(373,528)" expression-java="snowman3.setLocation(373, 528)" enable="true"/>
-                <call expression="snowman4.setLocation(610,289)" expression-java="snowman4.setLocation(610, 289)" enable="true"/>
-                <call expression="snowman.setLocation(781,480)" expression-java="snowman.setLocation(781, 480)" enable="true"/>
-                <call expression="snowman2.setLocation(885,751)" expression-java="snowman2.setLocation(885, 751)" enable="true"/>
-                <variable type="Snowman" type-java="Snowman" name="snowman5" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
-                <call expression="addObject(snowman5,829,168)" expression-java="addObject(snowman5, 829, 168)" enable="true"/>
                 <variable type="Player1" type-java="Player1" name="player1" value="new Player1()" value-java=" new Player1()" enable="true"/>
-                <call expression="addObject(player1,91,462)" expression-java="addObject(player1, 91, 462)" enable="true"/>
+                <call expression="addObject(player1,49,379)" expression-java="addObject(player1, 49, 379)" enable="true"/>
                 <variable type="Player2" type-java="Player2" name="player2" value="new Player2()" value-java=" new Player2()" enable="true"/>
-                <call expression="addObject(player2,1222,431)" expression-java="addObject(player2, 1222, 431)" enable="true"/>
+                <call expression="addObject(player2,1158,386)" expression-java="addObject(player2, 1158, 386)" enable="true"/>
+                <variable type="Snowman" type-java="Snowman" name="snowman" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
+                <call expression="addObject(snowman,796,186)" expression-java="addObject(snowman, 796, 186)" enable="true"/>
+                <variable type="Snowman" type-java="Snowman" name="snowman2" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
+                <call expression="addObject(snowman2,236,604)" expression-java="addObject(snowman2, 236, 604)" enable="true"/>
+                <variable type="Snowman" type-java="Snowman" name="snowman3" value="new Snowman()" value-java=" new Snowman()" enable="true"/>
+                <call expression="addObject(snowman3,644,441)" expression-java="addObject(snowman3, 644, 441)" enable="true"/>
+                <call expression="snowman.setLocation(724,174)" expression-java="snowman.setLocation(724, 174)" enable="true"/>
+                <call expression="snowman3.setLocation(775,485)" expression-java="snowman3.setLocation(775, 485)" enable="true"/>
+                <variable type="Icicle" type-java="Icicle" name="icicle" value="new Icicle()" value-java=" new Icicle()" enable="true"/>
+                <call expression="addObject(icicle,272,183)" expression-java="addObject(icicle, 272, 183)" enable="true"/>
+                <variable type="Icicle" type-java="Icicle" name="icicle2" value="new Icicle()" value-java=" new Icicle()" enable="true"/>
+                <call expression="addObject(icicle2,540,320)" expression-java="addObject(icicle2, 540, 320)" enable="true"/>
+                <variable type="Icicle" type-java="Icicle" name="icicle3" value="new Icicle()" value-java=" new Icicle()" enable="true"/>
+                <call expression="addObject(icicle3,470,535)" expression-java="addObject(icicle3, 470, 535)" enable="true"/>
+                <variable type="Icicle" type-java="Icicle" name="icicle4" value="new Icicle()" value-java=" new Icicle()" enable="true"/>
+                <call expression="addObject(icicle4,960,652)" expression-java="addObject(icicle4, 960, 652)" enable="true"/>
+                <variable type="Icicle" type-java="Icicle" name="icicle5" value="new Icicle()" value-java=" new Icicle()" enable="true"/>
+                <call expression="addObject(icicle5,901,277)" expression-java="addObject(icicle5, 901, 277)" enable="true"/>
             </body>
         </method>
     </methods>

@@ -6,11 +6,11 @@ import greenfoot.*;
 /**
  * 
  */
-public class Medkit extends Actor
+public class Icicle extends NPCs
 {
 
     /**
-     * Act - do whatever the Medkit wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - do whatever the Icicle wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
