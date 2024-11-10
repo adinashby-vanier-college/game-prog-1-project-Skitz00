@@ -7,6 +7,14 @@ import greenfoot.*;
  */
 public class Player1 extends PCs
 {
+    public Player1(){
+        
+        GreenfootImage player1 = getImage();
+        player1.scale(65,65);
+        setImage(player1);
+        
+    }
+    
     public static int Cooldown_Gun =-10;
     public static int Player1Hearts =3;
     /**
