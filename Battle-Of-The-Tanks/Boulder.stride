@@ -7,7 +7,18 @@
     </imports>
     <implements/>
     <fields/>
-    <constructors/>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="GreenfootImage" type-java="GreenfootImage" name="boulder" value="getImage()" value-java="getImage()" enable="true"/>
+                <call expression="boulder.scale(100,100)" expression-java="boulder.scale(100, 100)" enable="true"/>
+                <call expression="setImage(boulder)" expression-java="setImage(boulder)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
     <methods>
         <method access="public" type="void" type-java="void" name="act" enable="true">
             <javadoc xml:space="preserve">Act - do whatever the Boulder wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
