@@ -51,10 +51,11 @@ public class Player1 extends PCs
     {
         if (Greenfoot.isKeyDown("w")) {
             move(4);
-            animatedMovement();
+            animatedMovementForward();
         }
         if (Greenfoot.isKeyDown("s")) {
             move(-4);
+            animatedMovementBackward();
         }
         if (Greenfoot.isKeyDown("a")) {
             turn(-2);
@@ -63,10 +64,21 @@ public class Player1 extends PCs
             turn(2);
         }
     }
-    private void animatedMovement(){
+    private void animatedMovementForward(){
         frameCounter++;
         if(frameCounter % animationSpeed == 0){
             imageIndex = (imageIndex + 1) % images.length;
+            setImage(images[imageIndex]);
+        }
+        
+    }
+    private void animatedMovementBackward(){
+        frameCounter++;
+        if(frameCounter % animationSpeed == 0){
+            imageIndex--;
+            if(imageIndex < 0){
+                imageIndex = images.length -1;
+            }
             setImage(images[imageIndex]);
         }
         
