@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class Player1 extends PCs
 {
-    private GreenfootImage[] images;
+    private GreenfootImage[] imagesBlue;
     private int imageIndex = 0;
     private int frameCounter = 0;
     private int animationSpeed = 5;
@@ -16,16 +16,17 @@ public class Player1 extends PCs
         GreenfootImage player1 = getImage();
         player1.scale(65,65);
         setImage(player1);
-        images = new GreenfootImage[3];
-        images[0] = new GreenfootImage("bluetank_frame1.png");
-        images[1] = new GreenfootImage("bluetank_frame2.png");
-        images[2] = new GreenfootImage("bluetank_frame3.png");
         
-        for(int i = 0; i < images.length; i++){
-            images[i].scale(65,65);
+        imagesBlue = new GreenfootImage[3];
+        imagesBlue[0] = new GreenfootImage("bluetank_frame1.png");
+        imagesBlue[1] = new GreenfootImage("bluetank_frame2.png");
+        imagesBlue[2] = new GreenfootImage("bluetank_frame3.png");
+        
+        for(int i = 0; i < imagesBlue.length; i++){
+            imagesBlue[i].scale(65,65);
         }
         
-        setImage(images[0]);
+        setImage(imagesBlue[0]);
         
     }
     
@@ -67,8 +68,8 @@ public class Player1 extends PCs
     private void animatedMovementForward(){
         frameCounter++;
         if(frameCounter % animationSpeed == 0){
-            imageIndex = (imageIndex + 1) % images.length;
-            setImage(images[imageIndex]);
+            imageIndex = (imageIndex + 1) % imagesBlue.length;
+            setImage(imagesBlue[imageIndex]);
         }
         
     }
@@ -77,9 +78,9 @@ public class Player1 extends PCs
         if(frameCounter % animationSpeed == 0){
             imageIndex--;
             if(imageIndex < 0){
-                imageIndex = images.length -1;
+                imageIndex = imagesBlue.length -1;
             }
-            setImage(images[imageIndex]);
+            setImage(imagesBlue[imageIndex]);
         }
         
     }
