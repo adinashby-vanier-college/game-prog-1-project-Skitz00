@@ -7,12 +7,23 @@ import greenfoot.*;
  */
 public class Cactus extends NPCs
 {
-    public static int CactusHearts =3;
-    /**
-     * Act - do whatever the Cactus wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public int cactusHearts = 3;
     public void act()
     {
-        
+        checkHitByBullet();
+    }
+    
+    private void checkHitByBullet()
+    {
+        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
+        if (bullet != null)
+        {
+            cactusHearts--;
+            getWorld().removeObject(bullet);
+            if (cactusHearts <= 0)
+            {
+                getWorld().removeObject(this);
+            }
+        }
     }
 }

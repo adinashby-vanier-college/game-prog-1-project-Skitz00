@@ -88,7 +88,7 @@ public class Player1 extends PCs
     {
         if(Greenfoot.isKeyDown("space") && Cooldown_Gun <= 0)
         {
-            Bullet bullet = new Bullet();
+            Bullet bullet = new Bullet(20);
             bullet.setRotation(getRotation());
             this.getWorld().addObject(bullet,this.getX(), this.getY());
             //Greenfoot.playSound("")

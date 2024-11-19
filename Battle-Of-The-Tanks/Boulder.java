@@ -1,4 +1,3 @@
-// WARNING: This file is auto-generated and any changes to it will be overwritten
 import lang.stride.*;
 import java.util.*;
 import greenfoot.*;
@@ -8,7 +7,7 @@ import greenfoot.*;
  */
 public class Boulder extends NPCs
 {
-
+    public int boulderHearts = 2;
     /**
      * 
      */
@@ -24,5 +23,20 @@ public class Boulder extends NPCs
      */
     public void act()
     {
+        checkHitByBullet();
+    }
+    
+    private void checkHitByBullet()
+    {
+        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
+        if (bullet != null)
+        {
+            boulderHearts--;
+            getWorld().removeObject(bullet);
+            if (boulderHearts <= 0)
+            {
+                getWorld().removeObject(this);
+            }
+        }
     }
 }

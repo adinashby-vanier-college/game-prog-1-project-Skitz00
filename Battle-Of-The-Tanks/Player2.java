@@ -27,12 +27,16 @@ public class Player2 extends PCs
         
         setImage(imagesRed[0]);
     }
+    
+    public static int Cooldown_Gun =-10;
+    public static int Player2Hearts = 3;
     /**
      * Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         moveAndTurn();
+        shoot();
     }
     
     /**
@@ -55,6 +59,21 @@ public class Player2 extends PCs
             turn(2);
         }
     }
+    private void shoot()
+    {
+        if (Greenfoot.isKeyDown("enter") && Cooldown_Gun <= 0)
+        {
+            Bullet bullet = new Bullet(-20);
+            bullet.setRotation(getRotation());
+            this.getWorld().addObject(bullet,this.getX(), this.getY());
+            //Greenfoot.playSound("")
+            Cooldown_Gun = 20;
+        }
+        else if(!Greenfoot.isKeyDown("enter"))
+        {
+            Cooldown_Gun--;
+        }
+    }
     private void animatedMovementForward(){
         frameCounter++;
         if(frameCounter % animationSpeed == 0){
@@ -72,6 +91,5 @@ public class Player2 extends PCs
             }
             setImage(imagesRed[imageIndex]);
         }
-        
     }
 }
