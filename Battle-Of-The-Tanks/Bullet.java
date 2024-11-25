@@ -13,6 +13,7 @@ public class Bullet extends NPCs
     {
         this.speed = speed;
     }
+    
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -25,4 +26,7 @@ public class Bullet extends NPCs
         }
     }
     
+    public int getSpeed() {
+        return speed;
+    }
 }

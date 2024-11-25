@@ -25,8 +25,15 @@ public class Icicle extends NPCs
             getWorld().removeObject(bullet);
             if (icicleHearts <= 0)
             {
+                spawnMedkit();
                 getWorld().removeObject(this);
             }
+        }
+    }
+    private void spawnMedkit() {
+        if (Greenfoot.getRandomNumber(3) == 0) {
+            Medkit medkit = new Medkit();
+            getWorld().addObject(medkit, getX(), getY());
         }
     }
 }

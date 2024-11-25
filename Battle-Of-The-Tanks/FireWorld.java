@@ -46,5 +46,12 @@ public class FireWorld extends World
         addObject(player1, 54, 394);
         Player2 player2 =  new  Player2();
         addObject(player2, 1150, 389);
+        lava5.setLocation(397,399);
+        volcano3.setLocation(650,370);
+        volcano2.setLocation(416,642);
+        volcano.setLocation(881,130);
+        lava3.setLocation(680,143);
+        lava2.setLocation(878,365);
+        lava.setLocation(691,598);
     }
 }

@@ -31,7 +31,7 @@ public class Player1 extends PCs
     }
     
     public static int Cooldown_Gun =-10;
-    public static int Player1Hearts =3;
+    public int Player1Hearts =3;
     /**
      * Act - do whatever the Player1 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
@@ -41,7 +41,18 @@ public class Player1 extends PCs
         {
             moveAndTurn();
             shoot();
-            
+            checkHitByBullet();
+            checkForMedkit();
+            checkForCactus();
+            checkForBoulder();
+            checkForIcicle();
+            checkForSnowman();
+            checkForLava();
+            checkForVolcano();
+        }
+        else
+        {
+            getWorld().removeObject(this);
         }
     }
 
@@ -97,6 +108,66 @@ public class Player1 extends PCs
         else if(!Greenfoot.isKeyDown("space"))
         {
             Cooldown_Gun--;
+        }
+    }
+    
+    private void checkHitByBullet()
+    {
+        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
+        if (bullet != null && bullet.getSpeed() < 0) {
+            Player1Hearts--;
+            getWorld().removeObject(bullet);
+        }
+    }
+    private void checkForMedkit()
+    {
+        Medkit medkit = (Medkit) getOneIntersectingObject(Medkit.class);
+        if (medkit != null)
+        {
+            Player1Hearts++;
+            getWorld().removeObject(medkit);
+        }
+    }
+    public void checkForCactus() {
+        Cactus cactus = (Cactus) getOneIntersectingObject(Cactus.class);
+        if (cactus != null) {
+            Player1Hearts--;
+            getWorld().removeObject(cactus);
+        }
+    }
+    public void checkForBoulder() {
+        Boulder boulder = (Boulder) getOneIntersectingObject(Boulder.class);
+        if (boulder != null) {
+            Player1Hearts--;
+            getWorld().removeObject(boulder);
+        }
+    }
+    public void checkForIcicle() {
+        Icicle icicle = (Icicle) getOneIntersectingObject(Icicle.class);
+        if (icicle != null) {
+            Player1Hearts--;
+            getWorld().removeObject(icicle);
+        }
+    }
+    public void checkForSnowman() {
+        Snowman snowman = (Snowman) getOneIntersectingObject(Snowman.class);
+        if (snowman != null) {
+            Player1Hearts--;
+            getWorld().removeObject(snowman);
+        }
+    }
+    public void checkForLava() {
+        Lava lava = (Lava) getOneIntersectingObject(Lava.class);
+        if (lava != null) {
+            Player1Hearts--;
+            getWorld().removeObject(lava);
+        }
+    }
+    public void checkForVolcano() {
+        Volcano volcano = (Volcano) getOneIntersectingObject(Volcano.class);
+        if (volcano != null) {
+            Player1Hearts--;
+            getWorld().removeObject(volcano);
         }
     }
 }

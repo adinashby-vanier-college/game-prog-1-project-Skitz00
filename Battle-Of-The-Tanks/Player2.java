@@ -29,14 +29,21 @@ public class Player2 extends PCs
     }
     
     public static int Cooldown_Gun =-10;
-    public static int Player2Hearts = 3;
+    public int Player2Hearts =3;
     /**
      * Act - do whatever the Player2 wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        moveAndTurn();
-        shoot();
+        if (Player2Hearts > 0){
+            moveAndTurn();
+            shoot();
+            checkHitByBullet();
+            checkForMedkit();
+            checkForCactus();
+        } else {
+            getWorld().removeObject(this);
+        }
     }
     
     /**
@@ -90,6 +97,30 @@ public class Player2 extends PCs
                 imageIndex = imagesRed.length -1;
             }
             setImage(imagesRed[imageIndex]);
+        }
+    }
+    private void checkHitByBullet()
+    {
+        Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
+        if (bullet != null && bullet.getSpeed() > 0) {
+            Player2Hearts--;
+            getWorld().removeObject(bullet);
+        }
+    }
+    private void checkForMedkit()
+    {
+        Medkit medkit = (Medkit) getOneIntersectingObject(Medkit.class);
+        if (medkit != null)
+        {
+            Player2Hearts++;
+            getWorld().removeObject(medkit);
+        }
+    }
+    public void checkForCactus() {
+        Cactus cactus = (Cactus) getOneIntersectingObject(Cactus.class);
+        if (cactus != null) {
+            Player2Hearts--;
+            getWorld().removeObject(cactus);
         }
     }
 }
