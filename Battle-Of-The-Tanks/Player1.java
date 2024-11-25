@@ -115,6 +115,9 @@ public class Player1 extends PCs
     {
         Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (bullet != null && bullet.getSpeed() < 0) {
+            //decrease life count by 1
+            IceWorld.blueTankLivesCount.add(-1);
+            
             Player1Hearts--;
             getWorld().removeObject(bullet);
         }
