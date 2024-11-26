@@ -8,8 +8,8 @@ import greenfoot.*;
 public class IceWorld extends World
 {
     
-    //these 2 are the counter for the lives
-    public static Counter blueTankLivesCount = new Counter();
+    //these  are the counter for the lives
+    
     public static Counter redTankLivesCount = new Counter();
  
     /**
@@ -20,8 +20,16 @@ public class IceWorld extends World
         super(1200, 800, 1);
         prepare();
         //add counter on screen with coordinates and nb lives for blue
-        addObject(blueTankLivesCount, 50, 20);
-        blueTankLivesCount.setValue(3);
+        //addObject(blueTankLivesCount, 50, 20);
+        //blueTankLivesCount.setValue(3);
+        //this new code down here is with the new heart image. revert to previous code for old counter
+        
+        for(int i = 0;i < 3; i++){
+        addObject(new LifeTank(), 30 + 50*i, 30);
+        
+    }
+        
+        
         //add counter on screen with coordinates and nb lives for red
         addObject(redTankLivesCount, 900, 20);
         redTankLivesCount.setValue(3);

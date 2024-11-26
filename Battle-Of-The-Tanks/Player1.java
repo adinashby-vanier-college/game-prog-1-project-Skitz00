@@ -11,6 +11,8 @@ public class Player1 extends PCs
     private int imageIndex = 0;
     private int frameCounter = 0;
     private int animationSpeed = 5;
+    
+    private static int blueLives = 3;
     public Player1(){
         
         GreenfootImage player1 = getImage();
@@ -116,7 +118,17 @@ public class Player1 extends PCs
         Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (bullet != null && bullet.getSpeed() < 0) {
             //decrease life count by 1
-            IceWorld.blueTankLivesCount.add(-1);
+            Player1.blueLives--;
+            //remove from world all lifetank objects
+            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            //redraw lifetank
+            for(int i = 0;i <Player1.blueLives ; i++)
+            {
+                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+        
+            }
+            
+            
             
             Player1Hearts--;
             getWorld().removeObject(bullet);
