@@ -9,7 +9,7 @@ public class Medkit extends NPCs
 {
     private GreenfootImage[]images;
     private int imageIndex = 0;
-    private int animationDelay =  5;
+    private int animationDelay =  7;
     private int frameCount = 0;
     
     public Medkit(){
