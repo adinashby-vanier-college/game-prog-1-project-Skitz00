@@ -30,7 +30,7 @@ public class IceWorld extends World
     }
      
        for(int i = 0;i < 3; i++){
-        addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
     }
         

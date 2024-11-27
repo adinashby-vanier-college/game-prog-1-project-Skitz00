@@ -118,7 +118,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
@@ -135,7 +135,7 @@ public class Player2 extends PCs
             
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
@@ -151,7 +151,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             getWorld().removeObject(cactus);
@@ -165,7 +165,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
@@ -180,7 +180,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
@@ -197,7 +197,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             getWorld().removeObject(snowman);
@@ -211,7 +211,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
@@ -226,7 +226,7 @@ public class Player2 extends PCs
             //redraw lifetank
             for(int i = 0;i <Player2Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+                  getWorld().addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
             }
             
