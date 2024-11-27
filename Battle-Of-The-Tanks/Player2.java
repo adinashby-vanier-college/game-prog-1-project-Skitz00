@@ -41,6 +41,13 @@ public class Player2 extends PCs
             checkHitByBullet();
             checkForMedkit();
             checkForCactus();
+            checkForBoulder();
+            checkForIcicle();
+            checkForSnowman();
+            checkForLava();
+            checkForVolcano();
+
+            
         } else {
             getWorld().removeObject(this);
         }
@@ -104,9 +111,18 @@ public class Player2 extends PCs
         Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (bullet != null && bullet.getSpeed() > 0) {
             //decrease life count by 1
-            IceWorld.redTankLivesCount.add(-1);
+            
             
             Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
+            
             getWorld().removeObject(bullet);
         }
     }
@@ -116,6 +132,13 @@ public class Player2 extends PCs
         if (medkit != null)
         {
             Player2Hearts++;
+            
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
             getWorld().removeObject(medkit);
         }
     }
@@ -123,7 +146,91 @@ public class Player2 extends PCs
         Cactus cactus = (Cactus) getOneIntersectingObject(Cactus.class);
         if (cactus != null) {
             Player2Hearts--;
+            
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
             getWorld().removeObject(cactus);
+        }
+    }
+    public void checkForBoulder() {
+        Boulder boulder = (Boulder) getOneIntersectingObject(Boulder.class);
+        if (boulder != null) {
+            Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
+            getWorld().removeObject(boulder);
+        }
+    }
+    public void checkForIcicle() {
+        Icicle icicle = (Icicle) getOneIntersectingObject(Icicle.class);
+        if (icicle != null) {
+            Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
+            
+            
+            getWorld().removeObject(icicle);
+        }
+    }
+    public void checkForSnowman() {
+        Snowman snowman = (Snowman) getOneIntersectingObject(Snowman.class);
+        if (snowman != null) {
+            Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            getWorld().removeObject(snowman);
+        }
+    }
+    public void checkForLava() {
+        Lava lava = (Lava) getOneIntersectingObject(Lava.class);
+        if (lava != null) {
+            Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
+            getWorld().removeObject(lava);
+        }
+    }
+    public void checkForVolcano() {
+        Volcano volcano = (Volcano) getOneIntersectingObject(Volcano.class);
+        if (volcano != null) {
+            Player2Hearts--;
+            getWorld().removeObjects(getWorld().getObjects(LifeTankRed.class));
+            //redraw lifetank
+            for(int i = 0;i <Player2Hearts ; i++)
+            {
+                  getWorld().addObject(new LifeTankRed(), 1070 + 50*i, 30);
+        
+            }
+            
+            getWorld().removeObject(volcano);
         }
     }
 }

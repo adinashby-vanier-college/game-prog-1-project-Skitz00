@@ -5,9 +5,9 @@ import greenfoot.*;
 /**
  * 
  */
-public class LifeTank extends Actor
+public class LifeTankBlue extends Actor
 {
-    public LifeTank() {
+    public LifeTankBlue () {
         getImage().scale(40, 40);
     }
 

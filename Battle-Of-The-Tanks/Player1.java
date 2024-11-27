@@ -126,11 +126,11 @@ public class Player1 extends PCs
             
             Player1Hearts--;
             //remove from world all lifetank objects
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             
@@ -150,7 +150,7 @@ public class Player1 extends PCs
             //this adds ONE heart
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             
@@ -162,11 +162,11 @@ public class Player1 extends PCs
         if (cactus != null) {
             Player1Hearts--;
             
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             
@@ -178,11 +178,11 @@ public class Player1 extends PCs
         if (boulder != null) {
             Player1Hearts--;
             
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             getWorld().removeObject(boulder);
@@ -194,11 +194,11 @@ public class Player1 extends PCs
             Player1Hearts--;
             
             //removes one heart 
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             
@@ -212,11 +212,11 @@ public class Player1 extends PCs
         if (snowman != null) {
             Player1Hearts--;
             
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             getWorld().removeObject(snowman);
@@ -227,11 +227,11 @@ public class Player1 extends PCs
         if (lava != null) {
             Player1Hearts--;
             
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             
@@ -243,11 +243,11 @@ public class Player1 extends PCs
         if (volcano != null) {
             Player1Hearts--;
             
-            getWorld().removeObjects(getWorld().getObjects(LifeTank.class));
+            getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             //redraw lifetank
             for(int i = 0;i <Player1Hearts ; i++)
             {
-                  getWorld().addObject(new LifeTank(), 30 + 50*i, 30);
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
             }
             

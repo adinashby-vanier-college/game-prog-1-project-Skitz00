@@ -10,7 +10,7 @@ public class IceWorld extends World
     
     //these  are the counter for the lives
     
-    public static Counter redTankLivesCount = new Counter();
+    //public static Counter redTankLivesCount = new Counter();
  
     /**
      * Constructor for objects of class IceWorld.
@@ -25,14 +25,18 @@ public class IceWorld extends World
         //this new code down here is with the new heart image. revert to previous code for old counter
         
         for(int i = 0;i < 3; i++){
-        addObject(new LifeTank(), 30 + 50*i, 30);
+        addObject(new LifeTankBlue(), 30 + 50*i, 30);
+        
+    }
+     
+       for(int i = 0;i < 3; i++){
+        addObject(new LifeTankRed(), 1070 + 50*i, 30);
         
     }
         
-        
         //add counter on screen with coordinates and nb lives for red
-        addObject(redTankLivesCount, 900, 20);
-        redTankLivesCount.setValue(3);
+    //    addObject(redTankLivesCount, 900, 20);
+    //    redTankLivesCount.setValue(3);
     }
 
     /**
