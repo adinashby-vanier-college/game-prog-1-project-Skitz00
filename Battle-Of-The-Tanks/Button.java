@@ -8,12 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Actor
 {
-    private World link;
-    
-    public Button(String image, World link)
+    private String label;
+    public Button(String label)
     {
-        setImage(new GreenfootImage(image));
-        this.link = link;
+        this.label = label;
+        GreenfootImage image = new GreenfootImage(label, 24, Color.WHITE, Color.BLACK);
+        
+        int borderWidth = 5;
+        GreenfootImage borderedImage = new GreenfootImage(image.getWidth() + 2 * borderWidth, image.getHeight() + 2 * borderWidth);
+        borderedImage.setColor(Color.WHITE);
+        borderedImage.fillRect(0, 0, borderedImage.getWidth(), borderedImage.getHeight());
+        borderedImage.drawImage(image, borderWidth, borderWidth);
+
+        setImage(borderedImage);
     }
     
     /**
@@ -23,9 +30,9 @@ public class Button extends Actor
     public void act()
     {
         // Add your action code here.
-         if(Greenfoot.mouseClicked(this))
-        {
-            Greenfoot.setWorld(this.link);
+        if (Greenfoot.mouseClicked(this)) {
+            Greenfoot.setWorld(new IceWorld());
         }
     }
+    
 }

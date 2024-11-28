@@ -5,20 +5,22 @@ import greenfoot.*;
 /**
  * 
  */
-public class GameTitleScreen extends World
+public class Credits extends World
 {
     private long startTime;
-    public GameTitleScreen()
+    /**
+     * Constructor for objects of class Credits.
+     */
+    public Credits()
     {
         super(1200, 800, 1);
         startTime = System.currentTimeMillis();
     }
-    public void createButtons(World nextWorld) {
-        
-    }
+    
     public void act(){
         if (System.currentTimeMillis() - startTime >= 3000) {
-            Greenfoot.setWorld(new GameTutMoveTank());
+            Greenfoot.setWorld(new GameTitleScreen());
         }
     }
+    
 }

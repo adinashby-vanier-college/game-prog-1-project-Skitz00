@@ -16,11 +16,10 @@ public class Start extends World
     public Start()
     {
         super(1200, 800, 1);
+        Credits credits= new Credits();
         gameTitleScreen = new GameTitleScreen();
         gameTutMoveTank = new GameTutMoveTank();
         
-        gameTitleScreen.createButtons(gameTutMoveTank);
-        
-        Greenfoot.setWorld(gameTitleScreen);
+        Greenfoot.setWorld(credits);
     }
 }

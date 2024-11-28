@@ -12,9 +12,7 @@ public class Player1 extends PCs
     private int frameCounter = 0;
     private int animationSpeed = 5;
     
-    //private static int blueLives = 3;
     public Player1(){
-        
         GreenfootImage player1 = getImage();
         player1.scale(65,65);
         setImage(player1);
@@ -39,7 +37,7 @@ public class Player1 extends PCs
      */
     public void act()
     {
-        if(Player1Hearts>0)
+        if(Player1Hearts > 0)
         {
             moveAndTurn();
             shoot();
@@ -55,6 +53,10 @@ public class Player1 extends PCs
         else
         {
             getWorld().removeObject(this);
+
+            if (getWorld() instanceof IceWorld) {
+                Greenfoot.setWorld(new SandWorld());
+            }
         }
     }
 
@@ -104,7 +106,6 @@ public class Player1 extends PCs
             Bullet bullet = new Bullet(20);
             bullet.setRotation(getRotation());
             this.getWorld().addObject(bullet,this.getX(), this.getY());
-            //Greenfoot.playSound("")
             Cooldown_Gun = 20;
         }
         else if(!Greenfoot.isKeyDown("space"))
@@ -117,26 +118,12 @@ public class Player1 extends PCs
     {
         Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (bullet != null && bullet.getSpeed() < 0) {
-            
-            //Player1.blueLives--;  IGNORE
-            //decrease life count by 1
-            
-            //this line of code + the thing below + the loop makes it remove "1" heart. So COPY/PASTE where you want.
-            //if there is already a "player1hearts--  just copy the line below and the loop
-            
             Player1Hearts--;
-            //remove from world all lifetank objects
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
-            
-            
-            
             getWorld().removeObject(bullet);
         }
     }
@@ -146,14 +133,10 @@ public class Player1 extends PCs
         if (medkit != null)
         {
             Player1Hearts++;
-            
-            //this adds ONE heart
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
             getWorld().removeObject(medkit);
         }
     }
@@ -161,15 +144,11 @@ public class Player1 extends PCs
         Cactus cactus = (Cactus) getOneIntersectingObject(Cactus.class);
         if (cactus != null) {
             Player1Hearts--;
-            
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
             getWorld().removeObject(cactus);
         }
     }
@@ -177,13 +156,10 @@ public class Player1 extends PCs
         Boulder boulder = (Boulder) getOneIntersectingObject(Boulder.class);
         if (boulder != null) {
             Player1Hearts--;
-            
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
             getWorld().removeObject(boulder);
         }
@@ -192,18 +168,11 @@ public class Player1 extends PCs
         Icicle icicle = (Icicle) getOneIntersectingObject(Icicle.class);
         if (icicle != null) {
             Player1Hearts--;
-            
-            //removes one heart 
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
-            
-            
             getWorld().removeObject(icicle);
         }
     }
@@ -211,13 +180,10 @@ public class Player1 extends PCs
         Snowman snowman = (Snowman) getOneIntersectingObject(Snowman.class);
         if (snowman != null) {
             Player1Hearts--;
-            
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
             getWorld().removeObject(snowman);
         }
@@ -226,15 +192,11 @@ public class Player1 extends PCs
         Lava lava = (Lava) getOneIntersectingObject(Lava.class);
         if (lava != null) {
             Player1Hearts--;
-            
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
             getWorld().removeObject(lava);
         }
     }
@@ -242,15 +204,11 @@ public class Player1 extends PCs
         Volcano volcano = (Volcano) getOneIntersectingObject(Volcano.class);
         if (volcano != null) {
             Player1Hearts--;
-            
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
-            //redraw lifetank
-            for(int i = 0;i <Player1Hearts ; i++)
+            for(int i = 0; i < Player1Hearts; i++)
             {
-                  getWorld().addObject(new LifeTankBlue(), 30 + 50*i, 30);
-        
+                  getWorld().addObject(new LifeTankBlue(), 30 + 50 * i, 30);
             }
-            
             getWorld().removeObject(volcano);
         }
     }

@@ -50,6 +50,10 @@ public class Player2 extends PCs
             
         } else {
             getWorld().removeObject(this);
+            
+            if (getWorld() instanceof IceWorld) {
+                Greenfoot.setWorld(new SandWorld());
+            }
         }
     }
     

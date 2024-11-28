@@ -16,6 +16,16 @@ public class SandWorld extends World
     {
         super(1200, 800, 1);
         prepare();
+        
+       for(int i = 0;i < 3; i++){
+            addObject(new LifeTankBlue(), 30 + 50*i, 30);
+        
+       }
+     
+       for(int i = 0;i < 3; i++){
+        addObject(new LifeTankRed(), 1000 + 50*i, 30);
+        
+        }
     }
 
     /**
