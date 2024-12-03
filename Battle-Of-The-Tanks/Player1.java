@@ -68,10 +68,12 @@ public class Player1 extends PCs
         if (Greenfoot.isKeyDown("w")) {
             move(4);
             animatedMovementForward();
+            //Greenfoot.playSound("tankMove.wav");
         }
         if (Greenfoot.isKeyDown("s")) {
             move(-4);
             animatedMovementBackward();
+            //Greenfoot.playSound("tankMove.wav");
         }
         if (Greenfoot.isKeyDown("a")) {
             turn(-2);
@@ -107,6 +109,7 @@ public class Player1 extends PCs
             bullet.setRotation(getRotation());
             this.getWorld().addObject(bullet,this.getX(), this.getY());
             Cooldown_Gun = 20;
+            Greenfoot.playSound("tankShoot.wav");
         }
         else if(!Greenfoot.isKeyDown("space"))
         {
@@ -118,6 +121,8 @@ public class Player1 extends PCs
     {
         Bullet bullet = (Bullet) getOneIntersectingObject(Bullet.class);
         if (bullet != null && bullet.getSpeed() < 0) {
+            Greenfoot.playSound("tankBulletHit.wav");
+            
             Player1Hearts--;
             getWorld().removeObjects(getWorld().getObjects(LifeTankBlue.class));
             for(int i = 0; i < Player1Hearts; i++)

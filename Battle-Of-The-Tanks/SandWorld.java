@@ -9,6 +9,8 @@ public class SandWorld extends World
 {
     public static int Cacti =3;
     public static int Boulders =6;
+    
+    private GreenfootSound gameMusicDesert;
     /**
      * Constructor for objects of class SandWorld.
      */
@@ -16,6 +18,10 @@ public class SandWorld extends World
     {
         super(1200, 800, 1);
         prepare();
+        gameMusicDesert = new GreenfootSound("desertBackground.mp3");
+        gameMusicDesert.setVolume(50);
+        started();
+        
         
        for(int i = 0;i < 3; i++){
             addObject(new LifeTankBlue(), 30 + 50*i, 30);
@@ -27,7 +33,17 @@ public class SandWorld extends World
         
         }
     }
-
+    
+    public void started()
+    {
+        gameMusicDesert.playLoop();
+    }
+    
+    public void stopped()
+    {
+        gameMusicDesert.stop();
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

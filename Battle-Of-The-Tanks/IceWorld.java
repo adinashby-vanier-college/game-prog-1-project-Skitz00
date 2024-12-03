@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class IceWorld extends World
 {
-    
+    private GreenfootSound gameMusic;
     //these  are the counter for the lives
     
     //public static Counter redTankLivesCount = new Counter();
@@ -19,6 +19,9 @@ public class IceWorld extends World
     {
         super(1200, 800, 1);
         prepare();
+        gameMusic = new GreenfootSound("iceBackground.wav");
+        gameMusic.setVolume(20);
+        started();
         //add counter on screen with coordinates and nb lives for blue
         //addObject(blueTankLivesCount, 50, 20);
         //blueTankLivesCount.setValue(3);
@@ -27,22 +30,32 @@ public class IceWorld extends World
         for(int i = 0;i < 3; i++){
         addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
-    }
+        }
      
        for(int i = 0;i < 3; i++){
         addObject(new LifeTankRed(), 1000 + 50*i, 30);
         
-    }
+        }
         
-    //if(Player1.class == null){
-    //            Greenfoot.setWorld(new SandWorld());
-    //       }
+        //if(Player1.class == null){
+        //            Greenfoot.setWorld(new SandWorld());
+        //       }
     
         //add counter on screen with coordinates and nb lives for red
-    //    addObject(redTankLivesCount, 900, 20);
-    //    redTankLivesCount.setValue(3);
+        //    addObject(redTankLivesCount, 900, 20);
+        //    redTankLivesCount.setValue(3);
     }
-
+    
+    public void started()
+    {
+        gameMusic.play();
+    }
+    
+    public void stopped(World SandWorld)
+    {        
+        gameMusic.stop();        
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

@@ -7,7 +7,7 @@ import greenfoot.*;
  */
 public class FireWorld extends World
 {
-    
+    private GreenfootSound gameMusicFire;
     /**
      * Constructor for objects of class FireWorld.
      */
@@ -15,7 +15,9 @@ public class FireWorld extends World
     {
         super(1200, 800, 1);
         prepare();
-        
+        gameMusicFire = new GreenfootSound("lavaBackground.wav");
+        gameMusicFire.setVolume(20);
+        started();
        for(int i = 0;i < 3; i++){
         addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
@@ -26,7 +28,17 @@ public class FireWorld extends World
         
         }
     }
-
+    
+    public void started()
+    {
+        gameMusicFire.playLoop();
+    }
+    
+    public void stopped()
+    {
+        gameMusicFire.stop();
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

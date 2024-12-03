@@ -13,7 +13,9 @@
             <params/>
             <throws/>
             <delegate target="super" params="1200,800,1" params-java="1200, 800, 1"/>
-            <body/>
+            <body>
+                <call expression="Greenfoot.playSound(&quot;winningSound.wav&quot;)" expression-java="Greenfoot.playSound(&quot;winningSound.wav&quot;)" enable="true"/>
+            </body>
         </constructor>
     </constructors>
     <methods/>

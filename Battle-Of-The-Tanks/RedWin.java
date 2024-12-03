@@ -15,5 +15,6 @@ public class RedWin extends World
     public RedWin()
     {
         super(1200, 800, 1);
+        Greenfoot.playSound("winningSound.wav");
     }
 }

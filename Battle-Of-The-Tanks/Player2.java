@@ -65,10 +65,12 @@ public class Player2 extends PCs
         if (Greenfoot.isKeyDown("i")) {
             move(-4);
             animatedMovementForward();
+            //Greenfoot.playSound("tankMove.wav");
         }
         if (Greenfoot.isKeyDown("k")) {
             move(4);
             animatedMovementBackward();
+            //Greenfoot.playSound("tankMove.wav");
         }
         if (Greenfoot.isKeyDown("j")) {
             turn(-2);
@@ -81,6 +83,8 @@ public class Player2 extends PCs
     {
         if (Greenfoot.isKeyDown("enter") && Cooldown_Gun <= 0)
         {
+            Greenfoot.playSound("tankBulletHit");
+            
             Bullet bullet = new Bullet(-20);
             bullet.setRotation(getRotation());
             this.getWorld().addObject(bullet,this.getX(), this.getY());
