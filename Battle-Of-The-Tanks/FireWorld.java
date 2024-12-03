@@ -64,4 +64,19 @@ public class FireWorld extends World
         lava2.setLocation(878,365);
         lava.setLocation(691,598);
     }
+    
+    public void act(){
+        //Player1 player1 = (Player1) getObjects(Player1.class.get(0));
+        
+        Player1 player1 = (Player1)getObjects(Player1.class).get(0);
+        Player2 player2 = (Player2)getObjects(Player2.class).get(0);
+        
+        if(player1.Player1Hearts <=0){
+            Greenfoot.setWorld(new RedWin());
+        }
+        
+        if(player2.Player2Hearts <=0){
+            Greenfoot.setWorld(new BlueWin());
+        }
+    }
 }
