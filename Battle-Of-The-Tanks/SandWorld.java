@@ -20,7 +20,7 @@ public class SandWorld extends World
         prepare();
         gameMusicDesert = new GreenfootSound("desertBackground.mp3");
         gameMusicDesert.setVolume(50);
-        started();
+        //started();
         
         
        for(int i = 0;i < 3; i++){

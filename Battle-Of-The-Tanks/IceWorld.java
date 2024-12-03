@@ -21,7 +21,7 @@ public class IceWorld extends World
         prepare();
         gameMusic = new GreenfootSound("iceBackground.wav");
         gameMusic.setVolume(20);
-        started();
+        //started();
         //add counter on screen with coordinates and nb lives for blue
         //addObject(blueTankLivesCount, 50, 20);
         //blueTankLivesCount.setValue(3);
@@ -95,6 +95,7 @@ public class IceWorld extends World
         
         if(player1.Player1Hearts <=0 || player2.Player2Hearts <=0){
             Greenfoot.setWorld(new SandWorld());
+            stopped();
         }
     }
 }

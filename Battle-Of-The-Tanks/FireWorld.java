@@ -17,7 +17,7 @@ public class FireWorld extends World
         prepare();
         gameMusicFire = new GreenfootSound("lavaBackground.wav");
         gameMusicFire.setVolume(20);
-        started();
+        //started();
        for(int i = 0;i < 3; i++){
         addObject(new LifeTankBlue(), 30 + 50*i, 30);
         
