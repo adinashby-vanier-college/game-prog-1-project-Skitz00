@@ -85,4 +85,15 @@ public class SandWorld extends World
         Boulder boulder6 =  new  Boulder();
         addObject(boulder6, 849, 640);
     }
+    
+    public void act(){
+        //Player1 player1 = (Player1) getObjects(Player1.class.get(0));
+        
+        Player1 player1 = (Player1)getObjects(Player1.class).get(0);
+        Player2 player2 = (Player2)getObjects(Player2.class).get(0);
+        
+        if(player1.Player1Hearts <=0 || player2.Player2Hearts <=0){
+            Greenfoot.setWorld(new FireWorld());
+        }
+    }
 }

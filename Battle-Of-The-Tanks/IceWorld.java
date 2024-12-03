@@ -34,6 +34,10 @@ public class IceWorld extends World
         
     }
         
+    //if(Player1.class == null){
+    //            Greenfoot.setWorld(new SandWorld());
+    //       }
+    
         //add counter on screen with coordinates and nb lives for red
     //    addObject(redTankLivesCount, 900, 20);
     //    redTankLivesCount.setValue(3);
@@ -67,5 +71,17 @@ public class IceWorld extends World
         addObject(icicle4, 960, 652);
         Icicle icicle5 =  new  Icicle();
         addObject(icicle5, 901, 277);
+              
+    }
+    
+    public void act(){
+        //Player1 player1 = (Player1) getObjects(Player1.class.get(0));
+        
+        Player1 player1 = (Player1)getObjects(Player1.class).get(0);
+        Player2 player2 = (Player2)getObjects(Player2.class).get(0);
+        
+        if(player1.Player1Hearts <=0 || player2.Player2Hearts <=0){
+            Greenfoot.setWorld(new SandWorld());
+        }
     }
 }
