@@ -83,7 +83,7 @@ public class Player2 extends PCs
     {
         if (Greenfoot.isKeyDown("enter") && Cooldown_Gun <= 0)
         {
-            Greenfoot.playSound("tankBulletHit");
+            Greenfoot.playSound("tankShoot.wav");
             
             Bullet bullet = new Bullet(-20);
             bullet.setRotation(getRotation());
