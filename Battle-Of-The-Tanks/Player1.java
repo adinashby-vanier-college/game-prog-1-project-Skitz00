@@ -137,6 +137,8 @@ public class Player1 extends PCs
         Medkit medkit = (Medkit) getOneIntersectingObject(Medkit.class);
         if (medkit != null)
         {
+            Greenfoot.playSound("tankHeal.wav");
+            
             Player1Hearts++;
             for(int i = 0; i < Player1Hearts; i++)
             {
